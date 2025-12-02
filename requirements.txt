@@ -10,3 +10,5 @@ huggingface_hub
 streamlit
 requests
 sse_starlette
+aiohttp
+
