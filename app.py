@@ -11,7 +11,7 @@ load_dotenv()
 llm=HuggingFaceEndpoint(
     repo_id="mistralai/Mistral-7B-Instruct-v0.2",
     temperature=0.1,
-    huggingface_api_key=os.getenv("HuggingFaceHub_API_TOKEN")
+    huggingface_api_key=os.getenv("HUGGINGFACEHUB_API_TOKEN")
 )
 
 model=ChatHuggingFace(llm=llm)
