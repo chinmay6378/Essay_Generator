@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain-huggingface
+langchain-core
+langserve
+python-dotenv
+requests
+huggingface_hub
+streamlit
+requests

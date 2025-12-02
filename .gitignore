@@ -1,0 +1,10 @@
+myenv/
+__pycache__/
+*.pyc
+*.pkl
+*.pt
+*.onnx
+*.h5
+.cache/
+huggingface/
+.env
