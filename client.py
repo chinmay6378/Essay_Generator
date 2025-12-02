@@ -3,7 +3,7 @@ import requests
 
 def get_response_from_api(user_input):
     response = requests.post(
-        "http://localhost:8000/essay/invoke",
+        "https://essay-generator-xx5k.onrender.com/essay/invoke",
         json={'input':{'topic':user_input}})
     
 
