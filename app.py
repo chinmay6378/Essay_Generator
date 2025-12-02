@@ -2,19 +2,20 @@ from fastapi import FastAPI
 from langchain_core.prompts import ChatPromptTemplate
 from langserve import add_routes
 import uvicorn
-import os   
-from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
+import os
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 
 load_dotenv()
 
-llm=HuggingFaceEndpoint(
+# FIXED: correct parameter name
+llm = HuggingFaceEndpoint(
     repo_id="mistralai/Mistral-7B-Instruct-v0.2",
     temperature=0.1,
-    huggingface_api_key=os.getenv("HUGGINGFACEHUB_API_TOKEN")
+    huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
 )
 
-model=ChatHuggingFace(llm=llm)
+model = ChatHuggingFace(llm=llm)
 
 app = FastAPI()
 
@@ -29,6 +30,4 @@ add_routes(
 )
 
 if __name__ == "__main__":
-    import os
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
-
